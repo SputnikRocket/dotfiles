@@ -1,0 +1,124 @@
+* {
+  /* Default background color */
+  background-color: transparent;
+  text-color:       white;
+}
+
+
+window {
+
+  location: west;
+  x-offset: 0px;
+  padding: 1em;
+
+  border-color: #11aaffee;
+  border:       3px;
+  border-radius: 10px;
+
+  width:  640px; 
+  height: 480px;
+
+  background-color: black/40%;
+  background-radius: 10px;
+}
+
+mainbox {
+  spacing: 0px;
+  children: [inputbar,wrapper-mode-switcher,listview];
+}
+
+element {
+  background: transparent;
+  children: [ element-icon, element-text ];
+}
+element,element-text,element-icon, button {
+    cursor: pointer;
+}
+
+inputbar {
+  margin: 0px 0px 0.5em 0em;
+  spacing: 0.4em;
+  children: [entry,overlay,case-indicator];
+}
+
+listview, inputbar, message {
+  padding: 0.5em;  
+  border-color: cyan;
+  border:        3px;
+  border-radius: 10px;
+  background-color: darkgray/10%;
+
+  columns: 8;
+  lines:   8;
+}
+listview {
+  border:       0px 5px 5px 5px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+element {
+    border:  0;
+    padding:      10px;
+    font:         "Mono 8";
+    orientation: vertical;
+}
+element-icon {
+  size: 2em;
+}
+
+element  selected {
+  border-color: cyan;
+  border:       3px;
+  border-radius: 10px;
+  background-color: darkblue/10%;
+}
+
+element-text, element-icon {
+  font:             inherit; 
+  horizontal-align: 0.5;
+}
+
+wrapper-mode-switcher {
+    orientation: horizontal;
+
+    expand:     false;
+    spacing:    0;
+    children: [ icon-ms-ic1, mode-switcher, icon-ms-ic2 ];
+}
+icon-ms-ic1,icon-ms-ic2 {
+    size: 16;
+    vertical-align: 0.8;
+    expand:        false;
+    border:       0px 0px 5px ;
+    border-color: cyan;
+}
+
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+button {
+    text-color: white;
+    border:       0px 0px 5px ;
+    border-color: cyan;
+    border-radius:    10px 10px 0 0;
+    background-image: linear-gradient(to bottom, darkblue/10%, darkgray/10%);
+    horizontal-align: 0.5;
+}
+button selected.normal {
+    text-color: white;
+    margin: 0px;
+    padding: 0px;
+
+    border:       5px 5px 0px ;
+    border-color: cyan;
+    border-radius:    10px 10px 0 0;
+    background-image: linear-gradient(to bottom, darkblue/20%, darkgray/10%);
+}
+
+entry {
+    placeholder: "Drun";
+    placeholder-color: darkgrey/50%;
+  }
